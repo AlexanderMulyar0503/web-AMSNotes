@@ -12,6 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="img/favicon.png">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/index.css">
     </head>
 
     <body>
@@ -29,11 +30,25 @@
             <?php
                 for ($i = 2; $i < count($notesArray); $i++)
                 {
-                    print("<p>---------</p>");
-                    print("<p><b>" . basename($notesArray[$i], ".txt") . "</b></p>");
+                    print("<div class='note'>");
+                    print("<div class='noteHead'>");
+                    print("<a class='noteName' href='#'> <b>" . basename($notesArray[$i], ".txt") . "</b></a>");
+                    print("<a class='noteAction' href='#'>Удалить</a>");
+                    print("</div>");
+                    print("<div class='noteText'>");
                     $readFile = file_get_contents($CONF["pathNotes"] . "/" . $notesArray[$i]);
-                    print("<p>" . $readFile . "</p>");
-                    print("<p>---------</p>");
+
+                    if (strlen($readFile) >= 100)
+                    {
+                        print("<p>" . substr($readFile, 0, 100) . "</p> <p>...</p>");
+                    }
+                    else
+                    {
+                        print("<p>" . $readFile . "</p><br>");
+                    }
+
+                    print("</div>");
+                    print("</div>");
                 }
             ?>
         </div>
