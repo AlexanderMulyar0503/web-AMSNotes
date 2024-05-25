@@ -1,3 +1,18 @@
+.notesPanel
+{
+    margin-top: 25px;
+    text-align: center;
+}
+
+.addNote
+{
+    background-color: #008000;
+    padding: 10px;
+    border-radius: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
 .notesBox
 {
     margin: 25px 7px 25px 7px;

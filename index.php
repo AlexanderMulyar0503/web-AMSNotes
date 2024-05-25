@@ -26,6 +26,10 @@
             </div>
         </header>
 
+        <div class="notesPanel">
+            <a class="addNote" href="#">Добавить заметку</a>
+        </div>
+
         <div class="notesBox">
             <?php
                 for ($i = 2; $i < count($notesArray); $i++)
