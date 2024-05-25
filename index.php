@@ -27,7 +27,7 @@
         </header>
 
         <div class="notesPanel">
-            <a class="addNote" href="#">Добавить заметку</a>
+            <a class="addNote" href="./createNote.php">Добавить заметку</a>
         </div>
 
         <div class="notesBox">
@@ -40,16 +40,20 @@
                     print("<a class='noteAction' href='#'>Удалить</a>");
                     print("</div>");
                     print("<div class='noteText'>");
-                    $readFile = file_get_contents($CONF["pathNotes"] . "/" . $notesArray[$i]);
 
-                    if (strlen($readFile) >= 100)
+                    $openNote = fopen($CONF["pathNotes"] . "/" . $notesArray[$i], "r");
+                    print("<p>" . fgets($openNote) . "</p>");
+
+                    if (!feof($openNote))
                     {
-                        print("<p>" . substr($readFile, 0, 100) . "</p> <p>...</p>");
+                        print("<p>...</p>");
                     }
                     else
                     {
-                        print("<p>" . $readFile . "</p><br>");
+                        print("<br>");
                     }
+
+                    fclose($openNote);
 
                     print("</div>");
                     print("</div>");
