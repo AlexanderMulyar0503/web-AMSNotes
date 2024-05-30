@@ -1,0 +1,13 @@
+.editorNote
+{
+    width: 50%;
+    margin: 25px auto 25px auto;
+    min-width: 300px;
+}
+
+.editorNote p,input,textarea
+{
+    width: 100%;
+    margin: 5px 5px 5px 0;
+    font-size: 18px;
+}

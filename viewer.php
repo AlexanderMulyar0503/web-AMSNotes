@@ -25,13 +25,13 @@
         </header>
 
         <div class="viewerNote">
-            <?php print("<p> <a href='./edit.php?name=" . $_GET["name"] . "'>Редактировать</a> </p>"); ?>
+            <?php print("<p> <a href='./editor.php?name=" . $_GET["name"] . "'>Редактировать</a> </p>"); ?>
             <p>Имя заметки: <b> <?php print($_GET["name"]); ?> </b> </p>
             <p>Текст заметки:</p>
 
             <?php
                 $noteText = file_get_contents($CONF["pathNotes"] . "/" . $_GET["name"] . ".txt");
-                print("<textarea name='noteText' id='noteText' rows='15'>" . $noteText . "</textarea>");
+                print("<textarea name='noteText' id='noteText' rows='15' readonly>" . $noteText . "</textarea>");
             ?>
 
             <a href="./">На главную</a>
