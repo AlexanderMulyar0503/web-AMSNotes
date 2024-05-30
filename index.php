@@ -36,7 +36,7 @@
                 {
                     print("<div class='note'>");
                     print("<div class='noteHead'>");
-                    print("<a class='noteName' href='#'> <b>" . basename($notesArray[$i], ".txt") . "</b></a>");
+                    print("<a class='noteName' href='./viewer.php?name=" . basename($notesArray[$i], ".txt") . "'> <b>" . basename($notesArray[$i], ".txt") . "</b></a>");
                     print("<a class='noteAction' href='deleteQuestion.php?name=" . basename($notesArray[$i], ".txt") . "'>Удалить</a>");
                     print("</div>");
                     print("<div class='noteText'>");

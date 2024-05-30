@@ -1,0 +1,13 @@
+.viewerNote
+{
+    width: 50%;
+    margin: 25px auto 25px auto;
+    min-width: 300px;
+}
+
+.viewerNote a,p,textarea
+{
+    width: 100%;
+    margin: 5px 5px 5px 0;
+    font-size: 18px;
+}
