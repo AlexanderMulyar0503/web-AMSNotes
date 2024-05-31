@@ -5,7 +5,7 @@
     min-width: 300px;
 }
 
-.viewerNote a,p,textarea
+.viewerNote *
 {
     width: 100%;
     margin: 5px 5px 5px 0;

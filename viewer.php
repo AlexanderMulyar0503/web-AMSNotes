@@ -25,7 +25,11 @@
         </header>
 
         <div class="viewerNote">
-            <?php print("<p> <a href='./editor.php?name=" . $_GET["name"] . "'>Редактировать</a> </p>"); ?>
+            <form action="editor.php" method="post">
+                <?php print("<input type='text' name='oldName' value='" . $_GET["name"] . "' hidden>"); ?>
+                <input type="submit" value="Редактировать">
+            </form>
+
             <p>Имя заметки: <b> <?php print($_GET["name"]); ?> </b> </p>
             <p>Текст заметки:</p>
 
