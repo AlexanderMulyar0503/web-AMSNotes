@@ -37,7 +37,7 @@
                     print("<div class='note'>");
                     print("<div class='noteHead'>");
                     print("<a class='noteName' href='./viewer.php?name=" . basename($notesArray[$i], ".txt") . "'> <b>" . basename($notesArray[$i], ".txt") . "</b></a>");
-                    print("<a class='noteAction' href='deleteQuestion.php?name=" . basename($notesArray[$i], ".txt") . "'>Удалить</a>");
+                    print("<a class='noteAction' href='deleteQuestion.php?name=" . basename($notesArray[$i], ".txt") . "'> <img src='img/delete.png' width='25px' height='25px'> </a>");
                     print("</div>");
                     print("<div class='noteText'>");
 
