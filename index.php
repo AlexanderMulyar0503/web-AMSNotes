@@ -34,9 +34,9 @@
             <?php
                 for ($i = 2; $i < count($notesArray); $i++)
                 {
-                    print("<div class='note'>");
+                    print("<div class='note' onclick='nodeClick(\"" . basename($notesArray[$i], ".txt") . "\")'>");
                     print("<div class='noteHead'>");
-                    print("<a class='noteName' href='./viewer.php?name=" . basename($notesArray[$i], ".txt") . "'> <b>" . basename($notesArray[$i], ".txt") . "</b></a>");
+                    print("<p class='noteName'> <b>" . basename($notesArray[$i], ".txt") . "</b> </p>");
                     print("<a class='noteAction' href='deleteQuestion.php?name=" . basename($notesArray[$i], ".txt") . "'> <img src='img/delete.png' width='25px' height='25px'> </a>");
                     print("</div>");
                     print("<div class='noteText'>");
@@ -66,5 +66,7 @@
                 <?php print($CONF["copyright"]); ?>
             </p>
         </footer>
+
+        <script src="js/main.js"></script>
     </body>
 </html>
