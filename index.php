@@ -34,7 +34,7 @@
             <?php
                 for ($i = 2; $i < count($notesArray); $i++)
                 {
-                    print("<div class='note' onclick='nodeClick(\"" . basename($notesArray[$i], ".txt") . "\")'>");
+                    print("<div class='note' onclick='note_Click(\"" . basename($notesArray[$i], ".txt") . "\")'>");
                     print("<div class='noteHead'>");
                     print("<p class='noteName'> <b>" . basename($notesArray[$i], ".txt") . "</b> </p>");
                     print("<a class='noteAction' href='deleteQuestion.php?name=" . basename($notesArray[$i], ".txt") . "'> <img src='img/delete.png' width='25px' height='25px'> </a>");
