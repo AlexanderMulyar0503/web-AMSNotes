@@ -1,5 +1,8 @@
 <?php
+    include "vendor/autoload.php";
     include "conf.php";
+
+    $Parsedown = new Parsedown();
 ?>
 
 <!DOCTYPE html>
@@ -32,14 +35,17 @@
 
             <p>Имя заметки: <b> <?php print($_GET["name"]); ?> </b> </p>
             <p>Текст заметки:</p>
-
-            <?php
-                $noteText = file_get_contents($CONF["pathNotes"] . "/" . $_GET["name"] . ".txt");
-                print("<textarea name='noteText' id='noteText' rows='15' readonly>" . $noteText . "</textarea>");
-            ?>
-
-            <a href="./">На главную</a>
         </div>
+
+        <p class="toMainPage"> <a href="./">На главную</a> </p>
+
+        <div class="noteText">
+            <?php
+                print($Parsedown->text(file_get_contents($CONF["pathNotes"] . "/" . $_GET["name"] . ".txt")));
+            ?>
+        </div>
+
+        <p class="toMainPage"> <a href="./">На главную</a> </p>
 
         <footer>
             <p>
