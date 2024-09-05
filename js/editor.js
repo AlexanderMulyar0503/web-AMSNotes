@@ -12,17 +12,20 @@ function insert(text)
 
 function boldItalic(type)
 {
+    let startIndex = textarea.selectionStart;
+    let endIndex = textarea.selectionEnd;
+
     let char = "";
     if (type == "b") { char = "__"; }
     if (type == "i") { char = "*"; }
 
-    let endIndex = textarea.selectionEnd;
     let str1 = textarea.value.slice(0, textarea.selectionStart);
     let str2 = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
     let str3 = textarea.value.slice(textarea.selectionEnd);
 
     textarea.value = str1 + char + str2 + char + str3;
-    textarea.selectionStart = textarea.selectionEnd = endIndex + text.length;
+    textarea.selectionStart = startIndex + char.length;
+    textarea.selectionEnd = endIndex + char.length;
 }
 
 function insertHeader(level)
