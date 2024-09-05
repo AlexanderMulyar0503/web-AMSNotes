@@ -52,12 +52,14 @@
                 <p>Изменение текста заметки:</p>
 
                 <div class="editorButtons">
-                    <button type="button" onclick="insertHeader('1')">h1</button>
-                    <button type="button" onclick="insertHeader('2')">h2</button>
-                    <button type="button" onclick="insertHeader('3')">h3</button>
-                    <button type="button" onclick="insertHeader('4')">h4</button>
-                    <button type="button" onclick="insertHeader('5')">h5</button>
-                    <button type="button" onclick="insertHeader('6')">h6</button>
+                    <button type="button" onclick="insertHeader('1')"><b>h1</b></button>
+                    <button type="button" onclick="insertHeader('2')"><b>h2</b></button>
+                    <button type="button" onclick="insertHeader('3')"><b>h3</b></button>
+                    <button type="button" onclick="insertHeader('4')"><b>h4</b></button>
+                    <button type="button" onclick="insertHeader('5')"><b>h5</b></button>
+                    <button type="button" onclick="insertHeader('6')"><b>h6</b></button>
+                    <button type="button" onclick="boldItalic('b')"><b>B</b></button>
+                    <button type="button" onclick="boldItalic('i')"><i>I</i></button>
                     <button type="button" onclick="insertList('ol')">1.</button>
                     <button type="button" onclick="insertList('ul')">*</button>
                     <button type="button" onclick="insertLink()">link</button>

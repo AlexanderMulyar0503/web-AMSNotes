@@ -1,6 +1,6 @@
 .editorNote
 {
-    width: 50%;
+    width: 75%;
     margin: 25px auto 25px auto;
     min-width: 300px;
 }
@@ -14,7 +14,12 @@
 
 .editorButtons button
 {
-    width: 35px;
+    width: 40px;
     margin: 0;
-    font-size: 10px;
+    font-size: 12px;
+}
+
+.editorButtons b, .editorButtons i
+{
+    font-size: 12px;
 }

@@ -3,18 +3,36 @@ const textarea = document.getElementById("noteText");
 function insert(text)
 {
     let endIndex = textarea.selectionEnd;
-    textarea.value = textarea.value.slice(0, textarea.selectionStart) + text + textarea.value.slice(textarea.selectionEnd);
+    let str1 = textarea.value.slice(0, textarea.selectionStart);
+    let str2 = textarea.value.slice(textarea.selectionStart);
+
+    textarea.value = str1 + text + str2;
+    textarea.selectionStart = textarea.selectionEnd = endIndex + text.length;
+}
+
+function boldItalic(type)
+{
+    let char = "";
+    if (type == "b") { char = "__"; }
+    if (type == "i") { char = "*"; }
+
+    let endIndex = textarea.selectionEnd;
+    let str1 = textarea.value.slice(0, textarea.selectionStart);
+    let str2 = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+    let str3 = textarea.value.slice(textarea.selectionEnd);
+
+    textarea.value = str1 + char + str2 + char + str3;
     textarea.selectionStart = textarea.selectionEnd = endIndex + text.length;
 }
 
 function insertHeader(level)
 {
-    if (level == "1") { insert("#"); }
-    if (level == "2") { insert("##"); }
-    if (level == "3") { insert("###"); }
-    if (level == "4") { insert("####"); }
-    if (level == "5") { insert("#####"); }
-    if (level == "6") { insert("######"); }
+    if (level == "1") { insert("# "); }
+    if (level == "2") { insert("## "); }
+    if (level == "3") { insert("### "); }
+    if (level == "4") { insert("#### "); }
+    if (level == "5") { insert("##### "); }
+    if (level == "6") { insert("###### "); }
 }
 
 function insertList(type)
