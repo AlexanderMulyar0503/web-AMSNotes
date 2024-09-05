@@ -50,6 +50,23 @@
                 ?>
 
                 <p>Изменение текста заметки:</p>
+
+                <div class="editorButtons">
+                    <button type="button" onclick="insertHeader('1')">h1</button>
+                    <button type="button" onclick="insertHeader('2')">h2</button>
+                    <button type="button" onclick="insertHeader('3')">h3</button>
+                    <button type="button" onclick="insertHeader('4')">h4</button>
+                    <button type="button" onclick="insertHeader('5')">h5</button>
+                    <button type="button" onclick="insertHeader('6')">h6</button>
+                    <button type="button" onclick="insertList('ol')">1.</button>
+                    <button type="button" onclick="insertList('ul')">*</button>
+                    <button type="button" onclick="insertLink()">link</button>
+                    <button type="button" onclick="insertImg()">img</button>
+                    <button type="button" onclick="insertCode()">code</button>
+                </div>
+
+                <?php print("<a href='viewer.php?name=" . $_POST["oldName"] . "'>Открыть просмотр</a>"); ?>
+
                 <?php
                     $noteText = file_get_contents($CONF["pathNotes"] . "/" . $_POST["oldName"] . ".txt");
                     print("<textarea name='noteText' id='noteText' rows='15'>" . $noteText . "</textarea>");
@@ -73,5 +90,7 @@
                 <?php print($CONF["copyright"]); ?>
             </p>
         </footer>
+
+        <script src="js/editor.js"></script>
     </body>
 </html>
