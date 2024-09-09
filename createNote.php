@@ -1,18 +1,5 @@
 <?php
     include "conf.php";
-
-    $isCreate = false;
-    $isCreateResult = "";
-
-    if ($_POST["noteName"] != "" && $_POST["noteText"] != "")
-    {
-        $newNote = fopen($CONF["pathNotes"] . "/" . $_POST["noteName"] . ".txt", "w");
-        fwrite($newNote, $_POST["noteText"]);
-        fclose($newNote);
-
-        $isCreate = true;
-        $isCreateResult = "Заметка успешно создана";
-    }
 ?>
 
 <!DOCTYPE html>
@@ -38,20 +25,11 @@
         </header>
 
         <div class="createNote">
-            <form action="createNote.php" method="post">
+            <form action="editor.php" method="post">
                 <p>Имя заметки:</p>
                 <input type="text" name="noteName">
-                <p>Текст заметки:</p>
-                <textarea name="noteText" id="noteText" rows="15"></textarea>
                 <input type="submit" value="Создать">
             </form>
-
-            <?php
-                if ($isCreate == true)
-                {
-                    print("<p>" . $isCreateResult . "</p>");
-                }
-            ?>
             <p> <a href="./">На главную</a> </p>
         </div>
 

@@ -4,6 +4,12 @@
     $isEdit = false;
     $isEditResult = "";
 
+    if ($_POST["noteName"] && !file_exists($CONF["pathNotes"] . "/" . $_POST["noteName"] . ".txt"))
+    {
+        $newNote = fopen($CONF["pathNotes"] . "/" . $_POST["noteName"] . ".txt", "w");
+        fclose($newNote);
+    }
+
     if ($_POST["noteName"] != "" && $_POST["oldName"] != "" && $_POST["noteText"] != "")
     {
         rename($CONF["pathNotes"] . "/" . $_POST["oldName"] . ".txt", $CONF["pathNotes"] . "/" . $_POST["noteName"] . ".txt");
@@ -12,10 +18,13 @@
         fwrite($editNote, $_POST["noteText"]);
         fclose($editNote);
 
-        $_POST["oldName"] = $_POST["noteName"];
-
         $isEdit = true;
         $isEditResult = "Успешно изменено";
+    }
+
+    if (isset($_POST["noteName"]))
+    {
+        $_POST["oldName"] = $_POST["noteName"];
     }
 ?>
 

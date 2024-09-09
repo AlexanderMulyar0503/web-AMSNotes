@@ -8,6 +8,8 @@ function insert(text)
 
     textarea.value = str1 + text + str2;
     textarea.selectionStart = textarea.selectionEnd = endIndex + text.length;
+
+    textarea.focus();
 }
 
 function boldItalic(type)
@@ -26,6 +28,8 @@ function boldItalic(type)
     textarea.value = str1 + char + str2 + char + str3;
     textarea.selectionStart = startIndex + char.length;
     textarea.selectionEnd = endIndex + char.length;
+
+    textarea.focus();
 }
 
 function insertHeader(level)

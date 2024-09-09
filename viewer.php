@@ -29,7 +29,7 @@
 
         <div class="viewerNote">
             <form action="editor.php" method="post">
-                <?php print("<input type='text' name='oldName' value='" . $_GET["name"] . "' hidden>"); ?>
+                <?php print("<input type='text' name='noteName' value='" . $_GET["name"] . "' hidden>"); ?>
                 <input type="submit" value="Редактировать">
             </form>
 
