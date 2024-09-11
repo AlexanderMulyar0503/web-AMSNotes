@@ -1,11 +1,10 @@
-.viewerNote
+.noteHead
 {
-    width: 50%;
     margin: 25px auto 25px auto;
     min-width: 300px;
 }
 
-.viewerNote *
+.noteHead *
 {
     width: 100%;
     margin: 5px 5px 5px 0;
@@ -14,7 +13,7 @@
 
 .toMainPage
 {
-    margin: 10px 20px;
+    margin: 10px 0;
 }
 
 .noteText
@@ -116,4 +115,11 @@
 .noteText img
 {
     max-width: 100%;
+}
+
+.noteText pre
+{
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 0 .5em #ccc;
 }

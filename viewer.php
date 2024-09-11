@@ -27,7 +27,7 @@
             </div>
         </header>
 
-        <div class="viewerNote">
+        <div class="noteHead">
             <form action="editor.php" method="post">
                 <?php print("<input type='text' name='noteName' value='" . $_GET["name"] . "' hidden>"); ?>
                 <input type="submit" value="Редактировать">

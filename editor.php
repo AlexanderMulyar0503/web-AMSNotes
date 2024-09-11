@@ -4,7 +4,7 @@
     $isEdit = false;
     $isEditResult = "";
 
-    if ($_POST["noteName"] && !file_exists($CONF["pathNotes"] . "/" . $_POST["noteName"] . ".txt"))
+    if ($_POST["noteName"] != "" && !file_exists($CONF["pathNotes"] . "/" . $_POST["noteName"] . ".txt"))
     {
         $newNote = fopen($CONF["pathNotes"] . "/" . $_POST["noteName"] . ".txt", "w");
         fclose($newNote);
@@ -77,6 +77,7 @@
                 </div>
 
                 <?php print("<a href='viewer.php?name=" . $_POST["oldName"] . "'>Открыть просмотр</a>"); ?>
+                <a href="./">На главную</a>
 
                 <?php
                     $noteText = file_get_contents($CONF["pathNotes"] . "/" . $_POST["oldName"] . ".txt");
